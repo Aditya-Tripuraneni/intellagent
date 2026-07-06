@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "intellagent"
+version = "0.1.0"
+description = "IntellAgent simulator and evaluation framework"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "google-cloud-aiplatform==1.75.0",
+  "anthropic[vertex]==0.42.0",
+  "langchain_google_vertexai==2.0.9",
+  "langchain==0.3.7",
+  "langchain_core==0.3.15",
+  "langchain_openai==0.2.5",
+  "langgraph==0.2.44",
+  "pandas==2.2.3",
+  "langchain_community==0.3.5",
+  "langchain_ollama==0.2.0",
+  "networkx==3.2.1",
+  "streamlit==1.39.0",
+  "plotly==5.24.1",
+  "langchain_google_genai==2.0.7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==9.1.1",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["simulator*"]
